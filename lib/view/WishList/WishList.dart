@@ -5,7 +5,6 @@ import 'package:dart_furniture_store_app/model/item_model.dart';
 import 'package:dart_furniture_store_app/utils/Route/Route%20name.dart';
 import 'package:dart_furniture_store_app/utils/utils.dart';
 import 'package:dart_furniture_store_app/view/NaveBar%20Drawer/NavBar.dart';
-import 'package:dart_furniture_store_app/view/cartView/CartView.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_shopping_cart/model/cart_model.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
