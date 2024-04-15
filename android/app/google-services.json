@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "151080593680",
+    "project_id": "furniture-store-857c3",
+    "storage_bucket": "furniture-store-857c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151080593680:android:fce0474439d4655f435d95",
+        "android_client_info": {
+          "package_name": "com.example.dart_furniture_store_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDduMPBW6NdnC5BcoLm8ffkm-Le9eZQu8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
