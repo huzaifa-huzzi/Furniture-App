@@ -81,7 +81,7 @@ class _WishListScreenState extends State<WishListScreen> {
             })
           ),
           SizedBox(height: mediaQuery.size.height * 0.03,),
-          Text('Sofa :40,000 ',style: Theme.of(context).textTheme.titleMedium!.copyWith(),),
+          Text('Sofa :40 ',style: Theme.of(context).textTheme.titleMedium!.copyWith(),),
           SizedBox(height: mediaQuery.size.height * 0.03,),
           Padding(
               padding: EdgeInsets.symmetric(horizontal: mediaQuery.size.width * 0.1),
