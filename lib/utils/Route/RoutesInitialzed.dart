@@ -6,6 +6,8 @@ import 'package:dart_furniture_store_app/view/Login/LoginScreen.dart';
 import 'package:dart_furniture_store_app/view/NaveBar%20Drawer/NavBar.dart';
 import 'package:dart_furniture_store_app/view/Profile/Profile.dart';
 import 'package:dart_furniture_store_app/view/Signup/Signup%20Scrreen.dart';
+import 'package:dart_furniture_store_app/view/WishList/WishList.Desk.dart';
+import 'package:dart_furniture_store_app/view/WishList/WishList.chair.dart';
 import 'package:dart_furniture_store_app/view/WishList/WishList.dart';
 import 'package:dart_furniture_store_app/view/cartView/CartView.dart';
 import 'package:dart_furniture_store_app/view/splash/SplashScreen.dart';
@@ -45,8 +47,14 @@ class Routes {
       case RouteName.wishlist:
         return MaterialPageRoute(builder: (_) => const WishListScreen());
 
+      case RouteName.wishlist2:
+        return MaterialPageRoute(builder: (_) => const WishListChair());
+
+      case RouteName.wishlist3:
+        return MaterialPageRoute(builder: (_) => const WishListDesk());
+
       case RouteName.cart:
-        final ItemModel item = ItemModel(
+         ItemModel item = const  ItemModel(
           productId: '1',
           ProductName: 'Sofa',
           ProductDescription: 'Comfortable Sofa For sell',
@@ -54,6 +62,8 @@ class Routes {
           unitPrice: 40000,
         );
         return MaterialPageRoute(builder: (_) =>  CartView(item: item));
+
+
 
       default:
         return MaterialPageRoute(builder: (_) {

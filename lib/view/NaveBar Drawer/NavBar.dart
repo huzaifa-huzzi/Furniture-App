@@ -30,9 +30,7 @@ class _NavBarState extends State<NavBar> {
     final mediaQuery = MediaQuery.of(context);
     return Drawer(
       child:  StreamBuilder(stream: ref.child(SessionManager().userId.toString()).onValue, builder: (context,AsyncSnapshot snapshot){
-        if(!snapshot.hasData){
-          return  const  LoadingIndicator(indicatorType: Indicator.ballClipRotate,colors: [AppColors.primaryColor],);
-        } else if(snapshot.hasData){
+         if(snapshot.hasData){
           Map<dynamic,dynamic> map = snapshot.data.snapshot.value;
 
           return Consumer<ProfileProvider>(builder: (context,imagePicker,_){
@@ -73,7 +71,7 @@ class _NavBarState extends State<NavBar> {
                   ListTile(
                     leading:const  Icon(Icons.favorite,size: 35,color: AppColors.primaryColor,),
                     title:  Text('Wish List',style: Theme.of(context).textTheme.titleMedium!.copyWith(),),
-                    onTap: () => Get.to(() =>const  WishListScreen(),transition: Transition.leftToRight,duration:const  Duration(seconds: 3)),
+                    onTap: () => Get.to(() =>const WishListScreen(),transition:Transition.leftToRight,duration:const  Duration(seconds: 2)),
                   ),
                   ListTile(
                     leading:const  Icon(Icons.person,size: 40,color: AppColors.primaryColor,),

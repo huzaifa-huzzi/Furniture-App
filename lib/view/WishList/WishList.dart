@@ -40,82 +40,85 @@ class _WishListScreenState extends State<WishListScreen> {
           )))
            ]
       ),
-      body: Column(
-        children: [
-
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: mediaQuery.size.width * 0.3),
-            child: Text('WishList',style: Theme.of(context).textTheme.titleSmall!.copyWith(),)),
-          SizedBox(height: mediaQuery.size.height * 0.03,),
-          CircleAvatar(
-            radius: 120,
-            backgroundImage:const  AssetImage('assets/images/sofa.jpg'),
-            child: Consumer<FavoriteModel>(builder: (context, favoriteModel, _){
-               return  Stack(
-                 alignment:Alignment.bottomCenter ,
-                 children: [
-                   Positioned(
-                     bottom:20,
-                     right: 20,
-                     child: Container(
-                       width: 50,
-                       height: 50,
-                       decoration: const BoxDecoration(
-                         shape: BoxShape.circle,
-                         color: Colors.white,
-                       ),
-                       child:  InkWell(
-                         onTap: (){
-                           favoriteModel.toggleFavorite();
-                         },
-                         child: Icon(
-                           favoriteModel.isFavorite ? Icons.favorite : Icons.favorite_outline_rounded ,
-                           size: 40,
-                           color: favoriteModel.isFavorite ? Colors.red :null,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+        
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: mediaQuery.size.width * 0.01),
+              child: Text('WishList',style: Theme.of(context).textTheme.titleSmall!.copyWith(),)),
+            SizedBox(height: mediaQuery.size.height * 0.03,),
+            CircleAvatar(
+              radius: 120,
+              backgroundImage:const  AssetImage('assets/images/sofa.jpg'),
+              child: Consumer<FavoriteModel>(builder: (context, favoriteModel, _){
+                 return  Stack(
+                   alignment:Alignment.bottomCenter ,
+                   children: [
+                     Positioned(
+                       bottom:20,
+                       right: 20,
+                       child: Container(
+                         width: 50,
+                         height: 50,
+                         decoration: const BoxDecoration(
+                           shape: BoxShape.circle,
+                           color: Colors.white,
+                         ),
+                         child:  InkWell(
+                           onTap: (){
+                             favoriteModel.toggleFavorite();
+                           },
+                           child: Icon(
+                             favoriteModel.isFavorite ? Icons.favorite : Icons.favorite_outline_rounded ,
+                             size: 40,
+                             color: favoriteModel.isFavorite ? Colors.red :null,
+                           ),
                          ),
                        ),
                      ),
-                   ),
-                 ],
-               );
-            })
-          ),
-          SizedBox(height: mediaQuery.size.height * 0.03,),
-          Text('Sofa :40 ',style: Theme.of(context).textTheme.titleMedium!.copyWith(),),
-          SizedBox(height: mediaQuery.size.height * 0.03,),
-          Padding(
-              padding: EdgeInsets.symmetric(horizontal: mediaQuery.size.width * 0.1),
-              child: Text('Lorem Ipsum es simple\nel texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido\nel texto de relleno estándar de las industrias desde el año 1500.',style: Theme.of(context).textTheme.bodySmall!.copyWith(),)),
-          SizedBox(height: mediaQuery.size.height * 0.05,),
-          RoundButton(title: 'Add To Cart', onTap: (){
-            // Create an instance of ItemModel
-            final ItemModel item =   ItemModel(
-              productId: '1',
-              ProductName: 'Sofa',
-              ProductDescription: 'Comfortable Sofa For sell',
-              ProductThumbnail: 'assets/images/sofa.jpg',
-              unitPrice: 400,
-            );
-
-            // Add the item to the cart
-            PersistentShoppingCart().addToCart(
-              PersistentShoppingCartItem(
-                productId: item.productId,
-                productName: item.ProductName,
-                productDescription: item.ProductDescription,
-                productThumbnail: item.ProductThumbnail,
-                unitPrice: item.unitPrice,
-                quantity: 1, // Assuming initial quantity is 1 when added to the cart
-              ),
-            );
-
-            // Show a confirmation message
-            Utils.toastMessage('Item Added to cart');
-          }),
-
-
-
-        ],
+                   ],
+                 );
+              })
+            ),
+            SizedBox(height: mediaQuery.size.height * 0.03,),
+            Text('Sofa :40 ',style: Theme.of(context).textTheme.titleMedium!.copyWith(),),
+            SizedBox(height: mediaQuery.size.height * 0.03,),
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: mediaQuery.size.width * 0.1),
+                child: Text('Lorem Ipsum es simple\nel texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sidoel texto de relleno estándar de las industrias desde el año 1500.',style: Theme.of(context).textTheme.bodySmall!.copyWith(),)),
+            SizedBox(height: mediaQuery.size.height * 0.05,),
+            RoundButton(title: 'Add To Cart', onTap: (){
+        
+               ItemModel item = const   ItemModel(
+                productId: '1',
+                ProductName: 'Sofa',
+                ProductDescription: 'Comfortable Sofa \nFor sell',
+                ProductThumbnail: 'assets/images/sofa.jpg',
+                unitPrice: 400,
+              );
+        
+        
+              PersistentShoppingCart().addToCart(
+                PersistentShoppingCartItem(
+                  productId: item.productId,
+                  productName: item.ProductName,
+                  productDescription: item.ProductDescription,
+                  productThumbnail: item.ProductThumbnail,
+                  unitPrice: item.unitPrice,
+                  quantity: 1,
+                ),
+              );
+        
+        
+              Utils.toastMessage('Item Added to cart');
+            }),
+            SizedBox(height: mediaQuery.size.height * 0.03,),
+        
+        
+        
+          ],
+        ),
       ),
     );
   }
